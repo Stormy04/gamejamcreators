@@ -15,13 +15,18 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<DialogueLine> lines;
 
-    public bool isDialogueActive = false;
+    private bool isDialogueActive = false;
 
     public float typingSpeed = 0.2f;
 
     public Animator animator;
 
     private bool playAnimation = true;
+
+    private int indexOfCharacter = 0;
+
+    [SerializeField] private AudioSource audioPlayer;
+    [SerializeField] private AudioClip[] audioArray;
 
     private void OnEnable()
     {
@@ -42,6 +47,18 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (isDialogueActive && Input.GetMouseButtonDown(0))
+        {
+            if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            DisplayNextDialogueLine();
         }
     }
 
@@ -91,20 +108,12 @@ public class DialogueManager : MonoBehaviour
 
         DialogueLine currentLine = lines.Dequeue();
 
-        if (currentLine is DialogueEvent dialogueEvent)
-        {
-            TriggerDialogueEvent(dialogueEvent);
-        }
-        else
-        {
-            dialogueBox.SetActive(true);
+        dialogueBox.SetActive(true);
 
-            characterName.text = currentLine.character.name;
-            dialogueArea.text = "";
+        dialogueArea.text = "";
 
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(currentLine));
-        }
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(currentLine));
     }
 
     IEnumerator TypeSentence(DialogueLine dialogueLine)
@@ -113,40 +122,19 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
+            indexOfCharacter = char.ToUpper(letter) - 65;
+
+            if (indexOfCharacter < 0)
+            {
+                indexOfCharacter = 26;
+            }
+
+            audioPlayer.clip = audioArray[indexOfCharacter];
+            audioPlayer.Play();
+
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-    }
-
-    public void OnChoiceSelected(Dialogue nextDialogue)
-    {
-        if (nextDialogue != null)
-        {
-            playAnimation = false;
-            StartDialogue(nextDialogue);
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
-
-    private void CheckpointReached(Flag checkpoint)
-    {
-        if (HintManager.Instance.HasHint(checkpoint.requiredHints))
-        {
-            StartDialogue(checkpoint.continueDialogue);
-        }
-        else
-        {
-            DisplayNextDialogueLine();
-        }
-    }
-
-    private void TriggerDialogueEvent(DialogueEvent dialogueEvent)
-    {
-        HintManager.Instance.AddHint(dialogueEvent.hintToCollect);
-        DisplayNextDialogueLine();
     }
 
     public void EndDialogue()

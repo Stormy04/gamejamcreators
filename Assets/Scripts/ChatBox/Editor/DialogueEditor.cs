@@ -34,26 +34,6 @@ public class DialogueEditor : Editor
             AddElement(dialogueLinesProperty, typeof(DialogueLine));
         }
 
-        if (GUILayout.Button("Add Choice"))
-        {
-            AddElement(dialogueLinesProperty, typeof(Choice));
-        }
-
-        if (GUILayout.Button("Add Flag"))
-        {
-            AddElement(dialogueLinesProperty, typeof(Flag));
-        }
-
-        if (GUILayout.Button("Add ChoiceCheckpoint"))
-        {
-            AddElement(dialogueLinesProperty, typeof(ChoiceCheckpoint));
-        }
-
-        if (GUILayout.Button("Add Dialogue Event"))
-        {
-            AddElement(dialogueLinesProperty, typeof(DialogueEvent));
-        }
-
         if (GUILayout.Button("Remove Last Element"))
         {
             dialogueLinesProperty.arraySize--;

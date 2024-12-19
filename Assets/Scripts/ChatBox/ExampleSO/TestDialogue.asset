@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
-  m_Name: InspectNickDoor
+  m_Name: TestDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - rid: 5030115172387389479
+  - rid: 2460544738477735938
+  - rid: 2460544738477735939
   references:
     version: 2
     RefIds:
-    - rid: 5030115172387389479
+    - rid: 2460544738477735938
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
-        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
-        line: 'The door is not even closed.
-
-          You push it open.'
+        line: What the fuck is this
+    - rid: 2460544738477735939
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        line: Must be a new dialogue or some shit
