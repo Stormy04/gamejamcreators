@@ -8,7 +8,6 @@ public class DialogueEditor : Editor
     {
         Dialogue dialogue = (Dialogue)target;
 
-        // Draw the dialogueLines list with custom handling
         SerializedProperty dialogueLinesProperty = serializedObject.FindProperty("dialogueLines");
         for (int i = 0; i < dialogueLinesProperty.arraySize; i++)
         {
@@ -20,6 +19,7 @@ public class DialogueEditor : Editor
             {
                 dialogueLinesProperty.MoveArrayElement(i, i - 1);
             }
+            GUILayout.Space(5);
             if (GUILayout.Button("Move Down") && i < dialogueLinesProperty.arraySize - 1)
             {
                 dialogueLinesProperty.MoveArrayElement(i, i + 1);

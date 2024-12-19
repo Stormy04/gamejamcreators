@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Variables
     public static DialogueManager Instance;
 
     public TextMeshProUGUI characterName;
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private AudioClip[] audioArray;
 
     private DialogueLine currentLine; // Add this variable
+    #endregion
 
     private void OnEnable()
     {
@@ -62,6 +64,7 @@ public class DialogueManager : MonoBehaviour
             {
                 return;
             }
+
             if (!isLineFinished)
             {
                 FinishLine(currentLine);
