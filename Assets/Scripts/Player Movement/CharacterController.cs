@@ -15,10 +15,12 @@ public class CharacterController : MonoBehaviour
     private bool isDashing;
     private bool canDash;
     private float dashTime;
+    private float originalJumpForce;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalJumpForce = jumpForce;
     }
 
     void Update()
@@ -78,12 +80,22 @@ public class CharacterController : MonoBehaviour
             isGrounded = true;
             canDash = true; // Reset dash ability when grounded
         }
+        else if (collision.gameObject.CompareTag("Bed"))
+        {
+            isGrounded = true;
+            jumpForce *= 1.5f; // Increase jump force by 50
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            isGrounded = false;
+        }
+        else if (collision.gameObject.CompareTag("Bed"))
+        {
+            jumpForce = originalJumpForce;
             isGrounded = false;
         }
     }
