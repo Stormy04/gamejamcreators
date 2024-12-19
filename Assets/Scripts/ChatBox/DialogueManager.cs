@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Variables
     public static DialogueManager Instance;
 
     public TextMeshProUGUI characterName;
@@ -17,6 +18,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool isDialogueActive = false;
 
+    private bool isLineFinished = true;
+
     public float typingSpeed = 0.2f;
 
     public Animator animator;
@@ -27,6 +30,9 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioPlayer;
     [SerializeField] private AudioClip[] audioArray;
+
+    private DialogueLine currentLine; // Add this variable
+    #endregion
 
     private void OnEnable()
     {
@@ -58,7 +64,15 @@ public class DialogueManager : MonoBehaviour
             {
                 return;
             }
-            DisplayNextDialogueLine();
+
+            if (!isLineFinished)
+            {
+                FinishLine(currentLine);
+            }
+            else
+            {
+                DisplayNextDialogueLine();
+            }
         }
     }
 
@@ -106,7 +120,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        DialogueLine currentLine = lines.Dequeue();
+        currentLine = lines.Dequeue();
 
         dialogueBox.SetActive(true);
 
@@ -122,6 +136,8 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
+            isLineFinished = false;
+
             indexOfCharacter = char.ToUpper(letter) - 65;
 
             if (indexOfCharacter < 0)
@@ -135,6 +151,19 @@ public class DialogueManager : MonoBehaviour
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        isLineFinished = true;
+    }
+
+    private void FinishLine(DialogueLine dialogueLine)
+    {
+        StopAllCoroutines();
+
+        audioPlayer.Stop();
+
+        dialogueArea.text = dialogueLine.line;
+
+        isLineFinished = true;
     }
 
     public void EndDialogue()

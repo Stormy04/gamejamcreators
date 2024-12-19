@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 1113016552}
   - component: {fileID: 1113016551}
   - component: {fileID: 1113016550}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -383,8 +383,8 @@ Transform:
   m_GameObject: {fileID: 1113016549}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 0}
-  m_LocalScale: {x: 17.49987, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: -4.5, z: 0}
+  m_LocalScale: {x: 17.860458, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 1509754339}
   - component: {fileID: 1509754338}
   - component: {fileID: 1509754337}
+  - component: {fileID: 1509754342}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -496,7 +497,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1509754340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -539,7 +540,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -564,6 +565,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509754342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509754336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdecc14bc7285514dbcd7d6879e939f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tennisBallPrefab: {fileID: 1941671949533029533, guid: c97739fe094f337488ec27f8d1c5d8ce, type: 3}
+  throwForce: 10
 --- !u!1001 &4564419051902208392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillow
       objectReference: {fileID: 0}
+    - target: {fileID: 6438130571333454328, guid: 9e001a7c6b1127b4da7ecc66b04fda5a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -632,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 2085403055421118181, guid: 7bb174caf49f2d1458f88d23855050f4, type: 3}
       propertyPath: m_Name
       value: Mattress
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085403055421118181, guid: 7bb174caf49f2d1458f88d23855050f4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2139546607796135520, guid: 7bb174caf49f2d1458f88d23855050f4, type: 3}
       propertyPath: m_LocalPosition.x
