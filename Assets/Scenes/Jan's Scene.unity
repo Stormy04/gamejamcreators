@@ -440,7 +440,7 @@ MonoBehaviour:
   characterName: {fileID: 2050110245}
   dialogueArea: {fileID: 1907849184}
   dialogueBox: {fileID: 1683778066}
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   animator: {fileID: 1845517418}
   audioPlayer: {fileID: 1824312651}
   audioArray:

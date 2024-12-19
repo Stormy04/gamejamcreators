@@ -6,14 +6,15 @@ TagManager:
   tags:
   - Ground
   - Mattress
+  - Bed
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - World
   - Water
   - UI
-  - 
+  - TennisBall
   - 
   - 
   - 

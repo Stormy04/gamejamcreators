@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    #region Movement variables
     public float speed = 5f;
     public float jumpForce = 10f;
     public float dashSpeed = 20f;
@@ -16,11 +17,16 @@ public class CharacterController : MonoBehaviour
     private bool canDash;
     private float dashTime;
     private float originalJumpForce;
+    #endregion
+
+    private IThrowObject throwObjectBehaviour;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         originalJumpForce = jumpForce;
+
+        throwObjectBehaviour = GetComponent<IThrowObject>();
     }
 
     void Update()
@@ -64,6 +70,11 @@ public class CharacterController : MonoBehaviour
                 isDashing = false;
             }
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ThrowObject();
+        }
     }
 
     private void StartDash(float moveInput)
@@ -71,6 +82,11 @@ public class CharacterController : MonoBehaviour
         isDashing = true;
         dashTime = dashDuration;
         rb.velocity = new Vector2(moveInput * dashSpeed, rb.velocity.y);
+    }
+
+    private void ThrowObject()
+    {
+        throwObjectBehaviour.ThrowObject();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
