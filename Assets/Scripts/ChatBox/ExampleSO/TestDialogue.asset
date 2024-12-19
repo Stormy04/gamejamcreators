@@ -18,6 +18,7 @@ MonoBehaviour:
   - rid: 2460544738860466176
   - rid: 2460544738860466177
   - rid: 2460544738860466178
+  - rid: 2460544738860466179
   references:
     version: 2
     RefIds:
@@ -42,3 +43,7 @@ MonoBehaviour:
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
         line: ADADDDDDDDDDDDDDDDDDD
+    - rid: 2460544738860466179
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        line: Bitches on my dick, like niggas on my shlick
