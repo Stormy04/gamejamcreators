@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Mattress
+  - Bed
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 4294332179
+    locked: 0
+  - name: Background
+    uniqueID: 1777537565
     locked: 0
