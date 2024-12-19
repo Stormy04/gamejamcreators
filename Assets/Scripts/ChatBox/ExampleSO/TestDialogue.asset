@@ -15,14 +15,30 @@ MonoBehaviour:
   dialogueLines:
   - rid: 2460544738477735938
   - rid: 2460544738477735939
+  - rid: 2460544738860466176
+  - rid: 2460544738860466177
+  - rid: 2460544738860466178
   references:
     version: 2
     RefIds:
     - rid: 2460544738477735938
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
-        line: What the fuck is this
+        line: What the fuck is this gonna make this very very very very  very very
+          very very very very very very very very very very very very very very long
     - rid: 2460544738477735939
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
         line: Must be a new dialogue or some shit
+    - rid: 2460544738860466176
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        line: Wait
+    - rid: 2460544738860466177
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        line: THSIAIAISDAA
+    - rid: 2460544738860466178
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        line: ADADDDDDDDDDDDDDDDDDD

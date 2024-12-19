@@ -244,8 +244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.9148865, y: -46.93512}
-  m_SizeDelta: {x: -275.5932, y: -186.3135}
+  m_AnchoredPosition: {x: 7.9148865, y: -53.65497}
+  m_SizeDelta: {x: -275.5932, y: -199.7531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1090219521138817731
 CanvasRenderer:
@@ -1046,9 +1046,10 @@ MonoBehaviour:
   characterName: {fileID: 4775941861729537583}
   dialogueArea: {fileID: 2754289543692218509}
   dialogueBox: {fileID: 4413200991363102445}
-  isDialogueActive: 0
   typingSpeed: 0.05
   animator: {fileID: 6072494680258023703}
+  audioPlayer: {fileID: 0}
+  audioArray: []
 --- !u!95 &6072494680258023703
 Animator:
   serializedVersion: 5
