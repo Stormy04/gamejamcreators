@@ -8,33 +8,25 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    public Image characterIcon;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueArea;
 
     public GameObject dialogueBox;
-    public GameObject choicesBox;
-
-    public GameObject choice1;
-    public GameObject choice2;
-    public GameObject choice3;
-    public GameObject choice4;
-    public TextMeshProUGUI choice1Text;
-    public TextMeshProUGUI choice2Text;
-    public TextMeshProUGUI choice3Text;
-    public TextMeshProUGUI choice4Text;
-
-    private bool isChoosing = false;
 
     private Queue<DialogueLine> lines;
 
-    public bool isDialogueActive = false;
+    private bool isDialogueActive = false;
 
     public float typingSpeed = 0.2f;
 
     public Animator animator;
 
     private bool playAnimation = true;
+
+    private int indexOfCharacter = 0;
+
+    [SerializeField] private AudioSource audioPlayer;
+    [SerializeField] private AudioClip[] audioArray;
 
     private void OnEnable()
     {
@@ -55,6 +47,18 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (isDialogueActive && Input.GetMouseButtonDown(0))
+        {
+            if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            DisplayNextDialogueLine();
         }
     }
 
@@ -104,52 +108,12 @@ public class DialogueManager : MonoBehaviour
 
         DialogueLine currentLine = lines.Dequeue();
 
-        if (currentLine is Choice choice)
-        {
-            dialogueBox.SetActive(false);
-            choicesBox.SetActive(true);
+        dialogueBox.SetActive(true);
 
-            choice1Text.text = choice.choice1;
-            choice2Text.text = choice.choice2;
-            choice3Text.text = choice.choice3;
-            choice4Text.text = choice.choice4;
+        dialogueArea.text = "";
 
-            choice1Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice1Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choice.nextDialogue1));
-
-            choice2Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice2Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choice.nextDialogue2));
-
-            choice3Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice3Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choice.nextDialogue3));
-
-            choice4Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice4Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choice.nextDialogue4));
-        }
-        else if (currentLine is Flag checkpoint)
-        {
-            CheckpointReached(checkpoint);
-        }
-        else if (currentLine is ChoiceCheckpoint choiceCheckpoint)
-        {
-            ChoiceCheckpointReached(choiceCheckpoint);
-        }
-        else if (currentLine is DialogueEvent dialogueEvent)
-        {
-            TriggerDialogueEvent(dialogueEvent);
-        }
-        else
-        {
-            dialogueBox.SetActive(true);
-            choicesBox.SetActive(false);
-
-            characterIcon.sprite = currentLine.character.icon;
-            characterName.text = currentLine.character.name;
-            dialogueArea.text = "";
-
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(currentLine));
-        }
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(currentLine));
     }
 
     IEnumerator TypeSentence(DialogueLine dialogueLine)
@@ -158,80 +122,19 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
+            indexOfCharacter = char.ToUpper(letter) - 65;
+
+            if (indexOfCharacter < 0)
+            {
+                indexOfCharacter = 26;
+            }
+
+            audioPlayer.clip = audioArray[indexOfCharacter];
+            audioPlayer.Play();
+
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-    }
-
-    public void OnChoiceSelected(Dialogue nextDialogue)
-    {
-        if (nextDialogue != null)
-        {
-            playAnimation = false;
-            StartDialogue(nextDialogue);
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
-
-    private void CheckpointReached(Flag checkpoint)
-    {
-        if (HintManager.Instance.HasHint(checkpoint.requiredHints))
-        {
-            StartDialogue(checkpoint.continueDialogue);
-        }
-        else
-        {
-            DisplayNextDialogueLine();
-        }
-    }
-
-    private void ChoiceCheckpointReached(ChoiceCheckpoint choiceCheckpoint)
-    {
-        dialogueBox.SetActive(false);
-        choicesBox.SetActive(true);
-
-        choice1.SetActive(HintManager.Instance.HasHint(choiceCheckpoint.requiredHints1) );
-        choice2.SetActive(HintManager.Instance.HasHint(choiceCheckpoint.requiredHints2) );
-        choice3.SetActive(HintManager.Instance.HasHint(choiceCheckpoint.requiredHints3) );
-        choice4.SetActive(HintManager.Instance.HasHint(choiceCheckpoint.requiredHints4) && choiceCheckpoint.requiredHints4 == null);
-
-        choice1Text.text = choiceCheckpoint.choice1;
-        choice2Text.text = choiceCheckpoint.choice2;
-        choice3Text.text = choiceCheckpoint.choice3;
-        choice4Text.text = choiceCheckpoint.choice4;
-
-        if (HintManager.Instance.HasHint(choiceCheckpoint.requiredHints1) && choiceCheckpoint.requiredHints1 == null)
-        {
-            choice1Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice1Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choiceCheckpoint.nextDialogue1));
-        }
-
-        if (HintManager.Instance.HasHint(choiceCheckpoint.requiredHints2) && choiceCheckpoint.requiredHints2 == null)
-        {
-            choice2Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice2Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choiceCheckpoint.nextDialogue2));
-        }
-
-        if (HintManager.Instance.HasHint(choiceCheckpoint.requiredHints3) && choiceCheckpoint.requiredHints3 == null)
-        {
-            choice3Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice3Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choiceCheckpoint.nextDialogue3));
-        }
-
-        if (HintManager.Instance.HasHint(choiceCheckpoint.requiredHints4) && choiceCheckpoint.requiredHints4 == null)
-        {
-            choice4Text.GetComponentInParent<Button>().onClick.RemoveAllListeners();
-            choice4Text.GetComponentInParent<Button>().onClick.AddListener(() => OnChoiceSelected(choiceCheckpoint.nextDialogue4));
-        }
-    }
-
-    private void TriggerDialogueEvent(DialogueEvent dialogueEvent)
-    {
-        HintManager.Instance.AddHint(dialogueEvent.hintToCollect);
-        DisplayNextDialogueLine();
     }
 
     public void EndDialogue()
