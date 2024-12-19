@@ -25,8 +25,10 @@ MonoBehaviour:
     - rid: 2460544738477735938
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
-        line: What the fuck is this gonna make this very very very very  very very
-          very very very very very very very very very very very very very very long
+        line: Maybe if you got rid of that old yee-yee ass haircut you got you'd
+          get some bitches on your dick. Oh, better yet, maybe Tanisha'll call your
+          dog-ass if she ever stop fuckin' with that brain surgeon or lawyer she
+          fucking with
     - rid: 2460544738477735939
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
@@ -46,4 +48,4 @@ MonoBehaviour:
     - rid: 2460544738860466179
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
-        line: Bitches on my dick, like niggas on my shlick
+        line: I got some bitches on my dick
