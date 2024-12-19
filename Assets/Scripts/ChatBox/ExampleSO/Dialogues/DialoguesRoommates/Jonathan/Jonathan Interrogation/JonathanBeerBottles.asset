@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: JonathanBeerBottles
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115184248619033
+  - rid: 5030115184248619034
+  - rid: 5030115184248619035
+  - rid: 5030115184248619036
+  - rid: 5030115184248619037
+  - rid: 5030115184248619038
+  - rid: 5030115184248619039
+  - rid: 5030115184248619040
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115184248619033
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: '*You sigh*
+
+
+          Hey Jonathan. I''d like to ask if you noticed
+          the state the living room is in'
+    - rid: 5030115184248619034
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: edd9c8b3e9a321b46ae7901fdc6b2321, type: 2}
+        line: I kinda did yeah. What about it?
+    - rid: 5030115184248619035
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: The living room is wrecked and the floor is filled with broken beer
+          bottles
+    - rid: 5030115184248619036
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: edd9c8b3e9a321b46ae7901fdc6b2321, type: 2}
+        line: And what do you want me to do about it dude?
+    - rid: 5030115184248619037
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: I'm just asking if you know something about it
+    - rid: 5030115184248619038
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: edd9c8b3e9a321b46ae7901fdc6b2321, type: 2}
+        line: Nah dude. I got stuff to do it's not like I spend my time monitoring
+          people's behavior like a virgin
+    - rid: 5030115184248619039
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: He's getting super aggressive. Surely he's not telling the truth
+    - rid: 5030115184248619040
+      type: {class: Choice, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 0}
+        line: 
+        choice1: Accuse Jonathan
+        choice2: Gather more information
+        choice3: 
+        choice4: 
+        nextDialogue1: {fileID: 11400000, guid: a67b098e9b0db4a488bd0347a7484753,
+          type: 2}
+        nextDialogue2: {fileID: 11400000, guid: 285afbe0a250f1f4ba206f451d083bf0,
+          type: 2}
+        nextDialogue3: {fileID: 0}
+        nextDialogue4: {fileID: 0}

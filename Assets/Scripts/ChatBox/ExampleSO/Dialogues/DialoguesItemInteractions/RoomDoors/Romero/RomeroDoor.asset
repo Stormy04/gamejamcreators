@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: RomeroDoor
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115172387389551
+  - rid: 5030115172387389552
+  - rid: 5030115172387389553
+  - rid: 5030115172387389555
+  - rid: 5030115172387389556
+  - rid: 5030115172387389557
+  - rid: 5030115172387389558
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115172387389551
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: You can hear two people talk
+    - rid: 5030115172387389552
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: 'Oh man... he probably has friends over yet again...
+
+          This
+          is gonna be awkward'
+    - rid: 5030115172387389553
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: You knock on the door
+    - rid: 5030115172387389555
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: 'Suddenly everything get''s quiet
+
+          You hear what seems to
+          be people readjusting themselves from inside the room'
+    - rid: 5030115172387389556
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: '*Clears Throat*
+
+'
+    - rid: 5030115172387389557
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: Uhm... who is it?
+    - rid: 5030115172387389558
+      type: {class: Choice, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: 
+        choice1: Be firm
+        choice2: Be "chill"
+        choice3: 
+        choice4: 
+        nextDialogue1: {fileID: 11400000, guid: 68c1938d458703c4f92e63ea89548bd2,
+          type: 2}
+        nextDialogue2: {fileID: 11400000, guid: 6cf83fcbc7c259941bb35d69b27da468,
+          type: 2}
+        nextDialogue3: {fileID: 0}
+        nextDialogue4: {fileID: 0}

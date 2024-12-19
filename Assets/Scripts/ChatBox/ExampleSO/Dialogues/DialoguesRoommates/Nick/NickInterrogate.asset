@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: NickInterrogate
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115172387389542
+  - rid: 5030115172387389543
+  - rid: 5030115172387389544
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115172387389542
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 6e05a05b6f0a5f34dbac57b88989b0ac, type: 2}
+        line: Anyways, what's up?
+    - rid: 5030115172387389543
+      type: {class: ChoiceCheckpoint, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 0}
+        line: 
+        checkpointDialogue: {fileID: 0}
+        choice1: Ask about the dishes in the sink
+        choice2: Ask about noises at night
+        choice3: 'Ask about burnt plants '
+        choice4: Ask about beer bottles
+        nextDialogue1: {fileID: 11400000, guid: 235f7eda49c310649a113b43a58bcaa3,
+          type: 2}
+        nextDialogue2: {fileID: 11400000, guid: 81dba98da96a1744093d7721b72afd19,
+          type: 2}
+        nextDialogue3: {fileID: 11400000, guid: 6d8b694e3e19e5f4b90ca5207f918dfc,
+          type: 2}
+        nextDialogue4: {fileID: 11400000, guid: 6a71ad9223fd9154397051949ecf11f6,
+          type: 2}
+        requiredHints1: 02000000
+        requiredHints2: 06000000
+        requiredHints3: 01000000
+        requiredHints4: 00000000
+    - rid: 5030115172387389544
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Just checking up on you

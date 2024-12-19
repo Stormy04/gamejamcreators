@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: RomeroBeerBottles
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115184248619020
+  - rid: 5030115184248619021
+  - rid: 5030115184248619022
+  - rid: 5030115184248619023
+  - rid: 5030115184248619026
+  - rid: 5030115184248619027
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115184248619020
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: 'The living room is a mess filled with beer bottles.
+
+          Know
+          anything about it?'
+    - rid: 5030115184248619021
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 8e67ddc86b8e04049b47d95a70e97a08, type: 2}
+        line: We've been in this room the whole time
+    - rid: 5030115184248619022
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: I only left to go take a dump
+    - rid: 5030115184248619023
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Thanks for the info Romero...
+    - rid: 5030115184248619026
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: Still feels like there is information missing
+    - rid: 5030115184248619027
+      type: {class: Choice, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 0}
+        line: 
+        choice1: Accuse Romero
+        choice2: Gather more information
+        choice3: 
+        choice4: 
+        nextDialogue1: {fileID: 11400000, guid: 5054bdfc5f6979848ae282028b57f4a2,
+          type: 2}
+        nextDialogue2: {fileID: 11400000, guid: 285afbe0a250f1f4ba206f451d083bf0,
+          type: 2}
+        nextDialogue3: {fileID: 0}
+        nextDialogue4: {fileID: 0}

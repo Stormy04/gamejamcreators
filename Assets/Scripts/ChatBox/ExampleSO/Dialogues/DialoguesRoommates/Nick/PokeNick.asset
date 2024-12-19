@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: PokeNick
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115172387389487
+  - rid: 5030115172387389488
+  - rid: 5030115172387389489
+  - rid: 5030115172387389490
+  - rid: 5030115172387389493
+  - rid: 5030115172387389494
+  - rid: 5030115172387389495
+  - rid: 5030115172387389545
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115172387389487
+      type: {class: Flag, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: Something starts to move
+        requiredHints: 04000000
+        continueDialogue: {fileID: 11400000, guid: 53c7d3e97aef92143b2f8e59b6e9ca4b,
+          type: 2}
+    - rid: 5030115172387389488
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: Nick jumps out of bed wielding a combat knife aimed at you
+    - rid: 5030115172387389489
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 6e05a05b6f0a5f34dbac57b88989b0ac, type: 2}
+        line: I GOT A WEAPON AND AM NOT AFRAID TO USE I-
+    - rid: 5030115172387389490
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 6e05a05b6f0a5f34dbac57b88989b0ac, type: 2}
+        line: 'Oh. Hi there dude.
+
+          Sorry for almost killing you bro
+
+          Next
+          time please knock before you come in'
+    - rid: 5030115172387389493
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: You reflexively held your arms up
+    - rid: 5030115172387389494
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: '*Gulp*'
+    - rid: 5030115172387389495
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: I'll be sure to knock first next time don't worry. Sorry about it bro
+    - rid: 5030115172387389545
+      type: {class: Flag, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 6e05a05b6f0a5f34dbac57b88989b0ac, type: 2}
+        line: 
+        requiredHints: 
+        continueDialogue: {fileID: 11400000, guid: 8c7224a66bb41674b883d29abc0f769a,
+          type: 2}

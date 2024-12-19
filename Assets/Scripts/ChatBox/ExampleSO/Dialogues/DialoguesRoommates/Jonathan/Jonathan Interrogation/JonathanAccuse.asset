@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: JonathanAccuse
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115184248619047
+  - rid: 5030115184248619048
+  - rid: 5030115184248619049
+  - rid: 5030115184248619050
+  - rid: 5030115184248619051
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115184248619047
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Come on man. No need to sling offenses at me. You're the one that usually
+          get's home late and drunkenly stumbles about, leaving your mess behind
+    - rid: 5030115184248619048
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: I don't think it's far fetched for me to believe you made all this
+          mess
+    - rid: 5030115184248619049
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: edd9c8b3e9a321b46ae7901fdc6b2321, type: 2}
+        line: Sorry if I go out and don't stay inside like an incel, bro
+    - rid: 5030115184248619050
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: edd9c8b3e9a321b46ae7901fdc6b2321, type: 2}
+        line: Now, get the fuck out of my room before I punch your geek ass in the
+          face
+    - rid: 5030115184248619051
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: '*Nathan flinches at you*
+
+          Better to leave this dude alone'

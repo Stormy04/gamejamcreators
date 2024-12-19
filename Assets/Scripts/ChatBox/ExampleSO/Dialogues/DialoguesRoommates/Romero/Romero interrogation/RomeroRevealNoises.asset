@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: RomeroRevealNoises
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115172387389590
+  - rid: 5030115172387389591
+  - rid: 5030115172387389592
+  - rid: 5030115172387389593
+  - rid: 5030115172387389594
+  - rid: 5030115172387389595
+  - rid: 5030115172387389596
+  - rid: 5030115172387389597
+  - rid: 5030115172387389598
+  - rid: 5030115172387389599
+  - rid: 5030115172387389600
+  - rid: 5030115172387389601
+  - rid: 5030115172387389602
+  - rid: 5030115172387389603
+  - rid: 5030115172387389604
+  - rid: 5030115184248619067
+  - rid: 5030115172387389605
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115172387389590
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: It's just that whoever did it, burnt all of my carnations to the ground.
+          They're pretty expensive dude...
+    - rid: 5030115172387389591
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 8e67ddc86b8e04049b47d95a70e97a08, type: 2}
+        line: "You only noticed they were burnt now? \nKnowing how much of a straight
+          edge you are I'd expect you to have noticed it this morning"
+    - rid: 5030115172387389592
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: She scoffs
+    - rid: 5030115172387389593
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: This morning?! I was woke up late with a terrible headache. I really
+          didn't notice it
+    - rid: 5030115172387389594
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 8e67ddc86b8e04049b47d95a70e97a08, type: 2}
+        line: "Yeah. This morning. Didn't you also hear the noises at night? \nSounded
+          like someone was smashing shit in the living room"
+    - rid: 5030115172387389595
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Wait what?! At night? How the fuck did I not wake up to that?
+    - rid: 5030115172387389596
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 8e67ddc86b8e04049b47d95a70e97a08, type: 2}
+        line: I dunno man. It was pretty loud. Even Romero woke up to it and you
+          know how deep his sleep is
+    - rid: 5030115172387389597
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: Not even an explosion would wake me up bro
+    - rid: 5030115172387389598
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Oh man... it probably was Jonathan getting home drunk again...
+    - rid: 5030115172387389599
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: Could be bro
+    - rid: 5030115172387389600
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 8e67ddc86b8e04049b47d95a70e97a08, type: 2}
+        line: 'Besides, we''ve been in this room since yesterday.
+
+          I only
+          left this morning to go take a shower'
+    - rid: 5030115172387389601
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: I only left to take a shit
+    - rid: 5030115172387389602
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Thx for that info Romero...
+    - rid: 5030115172387389603
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: You're welcome bro
+    - rid: 5030115172387389604
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: They seem too defensive...
+    - rid: 5030115172387389605
+      type: {class: Choice, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 0}
+        line: 
+        choice1: Accuse Romero
+        choice2: Gather more information
+        choice3: 
+        choice4: 
+        nextDialogue1: {fileID: 11400000, guid: 5054bdfc5f6979848ae282028b57f4a2,
+          type: 2}
+        nextDialogue2: {fileID: 11400000, guid: 285afbe0a250f1f4ba206f451d083bf0,
+          type: 2}
+        nextDialogue3: {fileID: 0}
+        nextDialogue4: {fileID: 0}
+    - rid: 5030115184248619067
+      type: {class: DialogueEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: 
+        hintToCollect: 6

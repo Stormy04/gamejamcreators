@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: ChoiceCheckpointStart
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 786364217802621006
+  - rid: 786364217802621007
+  - rid: 786364217802621008
+  references:
+    version: 2
+    RefIds:
+    - rid: 786364217802621006
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: c25bceb923014d34e83e97bd63709a5d, type: 2}
+        line: This is the Choice Checkpoint Test
+    - rid: 786364217802621007
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Is it?
+    - rid: 786364217802621008
+      type: {class: ChoiceCheckpoint, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: 
+        checkpointDialogue: {fileID: 11400000}
+        choice1: Go with choice 1
+        choice2: Go with choice 2
+        choice3: Go with choice 3
+        choice4: Go with choice 4
+        nextDialogue1: {fileID: 11400000, guid: 9568c64b47929b741975918929e956d0,
+          type: 2}
+        nextDialogue2: {fileID: 11400000, guid: 02d9294d5f693204390292ba0df8be2d,
+          type: 2}
+        nextDialogue3: {fileID: 11400000, guid: 6335a0816d1ffdc45b5b73d09daddd57,
+          type: 2}
+        nextDialogue4: {fileID: 11400000, guid: ad0128bddce4375448cf9126af8a6bc9,
+          type: 2}

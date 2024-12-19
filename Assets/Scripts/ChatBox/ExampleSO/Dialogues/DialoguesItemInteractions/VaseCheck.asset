@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae52536c973b65f41910e43e3c42eed8, type: 3}
+  m_Name: VaseCheck
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - rid: 5030115172387389448
+  - rid: 5030115172387389452
+  - rid: 5030115172387389453
+  - rid: 5030115172387389454
+  - rid: 5030115184248619071
+  references:
+    version: 2
+    RefIds:
+    - rid: 5030115172387389448
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: Looking at the dirt on the vase, you notice what looks like a bit of
+          paper sticking out
+    - rid: 5030115172387389452
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 687a5301d750b3b4da3bbe6752a9fb24, type: 2}
+        line: Oh. My. God.
+    - rid: 5030115172387389453
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: The "paper" was the rest of a blunt someone must have left there.
+    - rid: 5030115172387389454
+      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: Romero is always smoking. It could have only been him right?
+    - rid: 5030115184248619071
+      type: {class: DialogueEvent, ns: , asm: Assembly-CSharp}
+      data:
+        character: {fileID: 11400000, guid: 97af366f5a667df48a407cd9c28bf0e0, type: 2}
+        line: 
+        hintToCollect: 3
