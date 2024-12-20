@@ -14,11 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - rid: 2460544738477735938
-  - rid: 2460544738477735939
-  - rid: 2460544738860466176
-  - rid: 2460544738860466177
-  - rid: 2460544738860466178
-  - rid: 2460544738860466179
+  - rid: 2460544738860466180
   references:
     version: 2
     RefIds:
@@ -28,24 +24,8 @@ MonoBehaviour:
         line: Maybe if you got rid of that old yee-yee ass haircut you got you'd
           get some bitches on your dick. Oh, better yet, maybe Tanisha'll call your
           dog-ass if she ever stop fuckin' with that brain surgeon or lawyer she
-          fucking with
-    - rid: 2460544738477735939
+          fucking with                 NIGGAAAAAAAAAAAAAAA
+    - rid: 2460544738860466180
       type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
       data:
-        line: Must be a new dialogue or some shit
-    - rid: 2460544738860466176
-      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
-      data:
-        line: Wait
-    - rid: 2460544738860466177
-      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
-      data:
-        line: THSIAIAISDAA
-    - rid: 2460544738860466178
-      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
-      data:
-        line: ADADDDDDDDDDDDDDDDDDD
-    - rid: 2460544738860466179
-      type: {class: DialogueLine, ns: , asm: Assembly-CSharp}
-      data:
-        line: I got some bitches on my dick
+        line: Eat shit faggot

@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour
     private bool canDash;
     private float dashTime;
     private float originalJumpForce;
+    public bool isOnSkateboard; // Add this variable
+    public Transform skateboard; // Add a reference to the skateboard
     #endregion
 
     private IThrowObject throwObjectBehaviour;
@@ -37,29 +39,43 @@ public class CharacterController : MonoBehaviour
         if (!isDashing)
         {
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-            if (Input.GetButtonDown("Jump"))
+            if (!isOnSkateboard)
             {
-                if (isGrounded)
+                if (Input.GetButtonDown("Jump"))
                 {
-                   
-                    rb.AddForce(Vector2.up * jumpForce * 2, ForceMode2D.Impulse);
-                    canDoubleJump = true;
-                    canDash = true;
-                }
-                else if (canDoubleJump)
-                {
-                    rb.velocity = Vector2.zero;
-                    rb.AddForce(Vector2.up * jumpForce * 2, ForceMode2D.Impulse);
-                    canDoubleJump = false;
+                    if (isGrounded)
+                    {
+                        rb.AddForce(Vector2.up * jumpForce * 2, ForceMode2D.Impulse);
+                        canDoubleJump = true;
+                        canDash = true;
+                    }
+                    else if (canDoubleJump)
+                    {
+                        rb.velocity = Vector2.zero;
+                        rb.AddForce(Vector2.up * jumpForce * 2, ForceMode2D.Impulse);
+                        canDoubleJump = false;
+                    }
                 }
             }
-
-            if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) && canDash)
+            else //if is on skateboard
             {
-                StartDash(moveInput);
-                if (!isGrounded)
+                if (Input.GetButtonDown("Jump"))
                 {
-                    canDash = false;
+                    isOnSkateboard = false;
+                    foreach (Transform child in transform)
+                    {
+                        child.parent = null;
+                        child.GetComponent<Rigidbody2D>().isKinematic = false;
+                    }
+                }
+
+                if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) && canDash)
+                {
+                    StartDash(moveInput);
+                    if (!isGrounded)
+                    {
+                        canDash = false;
+                    }
                 }
             }
         }
@@ -120,5 +136,12 @@ public class CharacterController : MonoBehaviour
             jumpForce = originalJumpForce;
             isGrounded = false;
         }
+    }
+
+    public void MountSkateboard(Transform skateboardTransform)
+    {
+        isOnSkateboard = true;
+        skateboardTransform.parent = transform;
+        transform.position = new Vector3(skateboardTransform.position.x, skateboardTransform.position.y + 0.75f, skateboardTransform.position.z); // Position the player on top of the skateboard
     }
 }
