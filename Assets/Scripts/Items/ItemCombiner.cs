@@ -11,20 +11,46 @@ public class ItemCombiner : MonoBehaviour
     public GameObject combinedItemPrefab;
 
     private bool hasCombined = false; // Boolean flag to track combination
+    private bool playerInTrigger = false; // Boolean flag to track if player is in trigger
+    private ItemCombiner otherItemCombiner; // Reference to the other ItemCombiner
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (hasCombined) return; // Exit if already combined
 
-        Debug.Log("Collision detected with: " + other.name);
-
-        ItemCombiner otherItemCombiner = other.GetComponent<ItemCombiner>();
-        if (otherItemCombiner != null)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Other object has ItemCombiner component.");
-            Debug.Log("This itemId: " + itemId + ", This combineWithItemId: " + combineWithItemId);
-            Debug.Log("Other itemId: " + otherItemCombiner.itemId + ", Other combineWithItemId: " + otherItemCombiner.combineWithItemId);
+            playerInTrigger = true;
+        }
+        else
+        {
+            ItemCombiner itemCombiner = other.GetComponent<ItemCombiner>();
+            if (itemCombiner != null)
+            {
+                otherItemCombiner = itemCombiner;
+                Debug.Log("Other object has ItemCombiner component.");
+                Debug.Log("This itemId: " + itemId + ", This combineWithItemId: " + combineWithItemId);
+                Debug.Log("Other itemId: " + otherItemCombiner.itemId + ", Other combineWithItemId: " + otherItemCombiner.combineWithItemId);
+            }
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInTrigger = false;
+        }
+        else if (other.GetComponent<ItemCombiner>() != null)
+        {
+            otherItemCombiner = null;
+        }
+    }
+
+    private void Update()
+    {
+        if (playerInTrigger && Input.GetKeyDown(KeyCode.E) && otherItemCombiner != null && !hasCombined)
+        {
             // Simplified condition to check if the other object has the correct identifier for combination
             if ((itemId == otherItemCombiner.combineWithItemId && combineWithItemId == otherItemCombiner.itemId) ||
                 (itemId == otherItemCombiner.itemId && combineWithItemId == otherItemCombiner.combineWithItemId))
@@ -32,7 +58,7 @@ public class ItemCombiner : MonoBehaviour
                 Debug.Log("Combination criteria met.");
 
                 // Instantiate the combined item at the midpoint between the two items
-                Vector3 combinedPosition = (transform.position + other.transform.position) / 2;
+                Vector3 combinedPosition = (transform.position + otherItemCombiner.transform.position) / 2;
                 Instantiate(combinedItemPrefab, combinedPosition, Quaternion.identity);
 
                 // Set the flag to true to prevent further combinations
@@ -40,7 +66,7 @@ public class ItemCombiner : MonoBehaviour
                 otherItemCombiner.hasCombined = true;
 
                 // Destroy both original items
-                Destroy(other.gameObject);
+                Destroy(otherItemCombiner.gameObject);
                 Destroy(gameObject);
             }
             else
