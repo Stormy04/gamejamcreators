@@ -20,12 +20,13 @@ public class CharacterController : MonoBehaviour
     #endregion
 
     private IThrowObject throwObjectBehaviour;
+    private Vector3 initialPosition;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         originalJumpForce = jumpForce;
-
+        initialPosition = transform.position;
         throwObjectBehaviour = GetComponent<IThrowObject>();
     }
 
@@ -74,6 +75,11 @@ public class CharacterController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ThrowObject();
+        }
+
+        if (transform.position.y < -10)
+        {
+            transform.position = initialPosition;
         }
     }
 
