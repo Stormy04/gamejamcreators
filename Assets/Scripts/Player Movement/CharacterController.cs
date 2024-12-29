@@ -23,7 +23,7 @@ public class CharacterController : MonoBehaviour
 
     private IThrowObject throwObjectBehaviour;
     private Vector3 initialPosition;
-
+    public Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +39,17 @@ public class CharacterController : MonoBehaviour
         if (!isDashing)
         {
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            animator.SetFloat("Speed", Mathf.Abs(moveInput));
+
+            if (moveInput > 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (moveInput < 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+
             if (!isOnSkateboard)
             {
                 if (Input.GetButtonDown("Jump"))
@@ -48,16 +59,18 @@ public class CharacterController : MonoBehaviour
                         rb.AddForce(Vector2.up * jumpForce * 2, ForceMode2D.Impulse);
                         canDoubleJump = true;
                         canDash = true;
+                        animator.SetBool("IsJumping", true);
                     }
                     else if (canDoubleJump)
                     {
                         rb.velocity = Vector2.zero;
                         rb.AddForce(Vector2.up * jumpForce * 2, ForceMode2D.Impulse);
                         canDoubleJump = false;
+                        animator.SetBool("IsJumping", true);
                     }
                 }
             }
-            else //if is on skateboard
+            else
             {
                 if (Input.GetButtonDown("Jump"))
                 {
@@ -116,12 +129,14 @@ public class CharacterController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            canDash = true; // Reset dash ability when grounded
+            canDash = true;
+            animator.SetBool("IsJumping", false);
         }
         else if (collision.gameObject.CompareTag("Bed"))
         {
             isGrounded = true;
-            jumpForce *= 1.5f; // Increase jump force by 50
+            jumpForce *= 1.5f;
+            animator.SetBool("IsJumping", false);
         }
     }
 
@@ -142,6 +157,6 @@ public class CharacterController : MonoBehaviour
     {
         isOnSkateboard = true;
         skateboardTransform.parent = transform;
-        transform.position = new Vector3(skateboardTransform.position.x, skateboardTransform.position.y + 0.75f, skateboardTransform.position.z); // Position the player on top of the skateboard
+        transform.position = new Vector3(skateboardTransform.position.x, skateboardTransform.position.y + 0.75f, skateboardTransform.position.z);
     }
 }

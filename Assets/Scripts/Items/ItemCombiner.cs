@@ -28,9 +28,6 @@ public class ItemCombiner : MonoBehaviour
             if (itemCombiner != null)
             {
                 otherItemCombiner = itemCombiner;
-                Debug.Log("Other object has ItemCombiner component.");
-                Debug.Log("This itemId: " + itemId + ", This combineWithItemId: " + combineWithItemId);
-                Debug.Log("Other itemId: " + otherItemCombiner.itemId + ", Other combineWithItemId: " + otherItemCombiner.combineWithItemId);
             }
         }
     }
@@ -55,7 +52,7 @@ public class ItemCombiner : MonoBehaviour
             if ((itemId == otherItemCombiner.combineWithItemId && combineWithItemId == otherItemCombiner.itemId) ||
                 (itemId == otherItemCombiner.itemId && combineWithItemId == otherItemCombiner.combineWithItemId))
             {
-                Debug.Log("Combination criteria met.");
+               
 
                 // Instantiate the combined item at the midpoint between the two items
                 Vector3 combinedPosition = (transform.position + otherItemCombiner.transform.position) / 2;
@@ -71,7 +68,6 @@ public class ItemCombiner : MonoBehaviour
             }
             else
             {
-                Debug.Log("Combination criteria not met.");
             }
         }
     }

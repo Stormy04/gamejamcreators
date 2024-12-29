@@ -8,6 +8,7 @@ public class DraggableObject : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Vector3 initialPosition;
+    private bool isLocked = false; // Add this flag
 
     [Header("Drag Settings")]
     [Tooltip("Sorting order to use while dragging.")]
@@ -36,6 +37,8 @@ public class DraggableObject : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (isLocked) return; // Prevent dragging if the object is locked
+
         if (spriteRenderer != null)
         {
             // Change the sorting order to bring the object to the foreground
@@ -57,6 +60,8 @@ public class DraggableObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (isLocked) return; // Prevent dragging if the object is locked
+
         // Update the position to follow the mouse
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = transform.position.z; // Maintain the original Z position
@@ -65,6 +70,8 @@ public class DraggableObject : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (isLocked) return; // Prevent dragging if the object is locked
+
         if (spriteRenderer != null)
         {
             // Reset the sorting order to its original value
@@ -98,5 +105,10 @@ public class DraggableObject : MonoBehaviour
             if (rb != null)
                 rb.isKinematic = false;
         }
+    }
+
+    public void LockObject()
+    {
+        isLocked = true; // Set the flag to lock the object
     }
 }
