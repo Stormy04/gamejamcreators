@@ -15,7 +15,10 @@ public class SetPositionByTag : MonoBehaviour
     private int plankCount = 0;
     private const int requiredPlankCount = 5;
     private bool canInstantiate = false;
-
+    [SerializeField]
+    private GameObject questline;
+    [SerializeField]
+    private GameObject questdot;
     private void Start()
     {
         UpdatePlankCountText();
@@ -26,6 +29,8 @@ public class SetPositionByTag : MonoBehaviour
         if (canInstantiate && plankCount >= requiredPlankCount && Input.GetKeyDown(KeyCode.E))
         {
             Instantiate(objectToInstantiate, instantiatePosition, Quaternion.identity);
+            questline.SetActive(false);
+            questdot.SetActive(false);
             plankCount = 0; // Reset the count if needed
             UpdatePlankCountText();
             canInstantiate = false; // Reset the flag
@@ -60,6 +65,7 @@ public class SetPositionByTag : MonoBehaviour
         else if (other.CompareTag("Player"))
         {
             canInstantiate = true;
+            
         }
     }
 
