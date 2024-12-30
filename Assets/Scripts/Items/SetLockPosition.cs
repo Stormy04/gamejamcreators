@@ -81,7 +81,7 @@ public class SetPositionByTag : MonoBehaviour
     {
         if (plankCountText != null)
         {
-            plankCountText.text = "Planks Collected: " + plankCount;
+            plankCountText.text = "Planks Collected: " + plankCount + "/" + requiredPlankCount;
         }
     }
 }
